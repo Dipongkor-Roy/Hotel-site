@@ -1,7 +1,10 @@
+import { Container } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
+
 const Hero = () => {
     return (
-        <Carousel className='bg-dark' data-bs-theme="dark" >
+       <Container>
+         <Carousel className='bg-dark' data-bs-theme="dark" >
         <Carousel.Item>
           <img
             className="img-fluid d-block w-100"
@@ -13,7 +16,10 @@ const Hero = () => {
             <p className='text-white'>Book Your Rooms</p>
           </Carousel.Caption>
         </Carousel.Item>
+        
          </Carousel>
+        
+       </Container>
     );
 };
 
