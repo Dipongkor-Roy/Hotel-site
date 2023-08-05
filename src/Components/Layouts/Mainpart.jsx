@@ -1,19 +1,21 @@
-import { Outlet } from "react-router-dom";
+
 import Header from "../Header/Header";
 import Hero from "../Hero/Hero";
 import Cards from "../Cards/Cards";
-
-const Main = () => {
+import { Outlet } from "react-router-dom";
+const Mainpart = () => {
   return (
     <div>
       <Header></Header>
       <Hero></Hero>
-      <Outlet></Outlet>
+     
       <div className="my-5 bg-dark">
+      <Outlet></Outlet>
         <Cards></Cards>
       </div>
+      
     </div>
   );
 };
 
-export default Main;
+export default Mainpart;

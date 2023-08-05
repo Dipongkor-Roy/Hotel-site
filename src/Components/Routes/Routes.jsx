@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../Layouts/Main";
 import LogIn from "../LogIn/LogIn";
 import SignUp from "../SignUp/SignUp";
 import SignleRoom from "../SignleRoom/SignleRoom";
 import DoubleRoom from "../DoubleRoom/DoubleRoom";
 import PremiumRoom from "../PremiumRoom/PremiumRoom";
-
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import Mainpart from "../Layouts/Mainpart";
 
 
 export const router=createBrowserRouter([
     {
         path:'/',
-        element:<Main></Main>,
+        element:<Mainpart></Mainpart>,
         children:[
             
             {
@@ -19,20 +19,21 @@ export const router=createBrowserRouter([
                element: <LogIn/>
             },
             {
+
                path:'/signUp',
                element: <SignUp/>
             },
             {
                path:'/singleRoom',
-               element: <SignleRoom/>
+               element:<PrivateRoute><SignleRoom/></PrivateRoute> 
             },
             {
                path:'/doubleroom',
-               element: <DoubleRoom/>
+               element: <PrivateRoute><DoubleRoom/></PrivateRoute>
             },
             {
                path:'/premiumroom',
-               element: <PremiumRoom/>
+               element: <PrivateRoute><PremiumRoom/></PrivateRoute>
             },
 
         ]

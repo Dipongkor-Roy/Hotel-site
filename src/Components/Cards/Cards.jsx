@@ -1,24 +1,12 @@
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {FaBed,FaPeopleArrows,FaDollarSign} from 'react-icons/fa';
 
 
 const Cards = () => {
-  const navigate = useNavigate();
-  const singleRoom = () => {
-    
-    navigate('/singleRoom');
-  };
-  const doubleRoom = () => {
-    
-    navigate('/doubleRoom');
-  };
-  const premiumroom = () => {
-    
-    navigate('/premiumroom');
-  };
+
   return (
     <Container className="d-flex  flex-wrap justify-content-center ">
     <div className="m-3">
@@ -33,7 +21,7 @@ const Cards = () => {
           <p className="mx-2 "><FaBed/> :1</p>
           <p className="mx-2"><FaPeopleArrows/> :1</p>
           <p className="mx-2"><FaDollarSign/> : 119</p>
-     <Button onClick={singleRoom} variant="primary mx-2">Book</Button>
+    <Link to='/singleRoom'> <Button variant="primary mx-2">Book</Button></Link>
       </div>
         </Card.Body>
       </Card>
@@ -50,7 +38,7 @@ const Cards = () => {
           <p className="mx-2 "><FaBed/> :1</p>
           <p className="mx-2"><FaPeopleArrows/> :2</p>
           <p className="mx-2"><FaDollarSign/> : 149</p>
-        <Button onClick={doubleRoom} variant="primary mx-2">Book</Button>
+      <Link to='/doubleRoom'><Button variant="primary mx-2">Book</Button></Link> 
       </div>
         </Card.Body>
       </Card>
@@ -68,7 +56,7 @@ const Cards = () => {
           <p className="mx-2 "><FaBed/> :2</p>
           <p className="mx-2"><FaPeopleArrows/> :4</p>
           <p className="mx-2"><FaDollarSign/>: 249</p>
-          <Button onClick={premiumroom} variant="primary mx-2">Book</Button>
+          <Link to='/premiumroom'><Button variant="primary mx-2">Book</Button></Link>
       </div>
         </Card.Body>
       </Card>
